@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Post;
+use Session;
 
 class PostController extends Controller
 {
@@ -16,7 +17,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        // create a variable and store all the blog posts in it from the database
+        $posts = Post::all();
+
+        // return a view and pass in the above variable
+        return view('posts.index')->withPosts($posts);
     }
 
     /**
@@ -51,6 +56,15 @@ class PostController extends Controller
         $post->body = $request->body;
 
         $post->save();
+
+        // "Flash" - exists for one page request , the next request will deleted
+        // flash take two parameters the 1st: key (here: success) and
+        // 2nd: value (here: The blog post was successfully save)
+
+        // "Put" exists until the session is removed
+
+        Session::flash('success', 'The blog post was successfully save!');
+
         // redirect to another page
         return redirect()->route('posts.show', $post->id);
     }
@@ -64,6 +78,8 @@ class PostController extends Controller
     public function show($id)
     {
         //
+        $post = Post::find($id);
+        return view('posts.show')->withPost($post);
     }
 
     /**
