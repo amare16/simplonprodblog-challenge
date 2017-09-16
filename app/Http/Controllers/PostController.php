@@ -10,6 +10,12 @@ use Session;
 
 class PostController extends Controller
 {
+
+    public function __construct() {
+
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -46,7 +52,7 @@ class PostController extends Controller
         // validate the data
         $this->validate($request, array(
             'title' => 'required|max:255',
-            'body' => 'required'
+            'body' => 'required',
         ));
 
         // store in the database
@@ -54,6 +60,7 @@ class PostController extends Controller
 
         $post->title = $request->title;
         $post->body = $request->body;
+
 
         $post->save();
 

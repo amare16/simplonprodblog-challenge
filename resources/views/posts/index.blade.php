@@ -43,7 +43,7 @@
             </table>
 
             <div class="text-center">
-                {!! $posts->links(); !!}
+                {!! $posts->links() !!}
             </div>
         </div>
     </div>
