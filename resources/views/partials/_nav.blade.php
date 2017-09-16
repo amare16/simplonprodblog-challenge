@@ -28,6 +28,7 @@
                 <button type="submit" class="btn btn-default">Submit</button>
             </form> -->
             <ul class="nav navbar-nav navbar-right">
+                <a href="{{ route('register') }}" class="btn btn-default" >Register</a>
 
                 @if(Auth::check())
 
