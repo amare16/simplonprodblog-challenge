@@ -2,4 +2,4 @@ Ce blog vous raconte les plus grands et les plus connus écrivains français, Vi
 Ici vous pouvez trouver différents articles sur lui.
 
 
-https://static.independent.co.uk/s3fs-public/thumbnails/image/2014/07/05/12/Victor-Hugo-cropped.jpg
+<img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2014/07/05/12/Victor-Hugo-cropped.jpg">
