@@ -6,22 +6,22 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="jumbotron">
-                        <h1>Hello, world!</h1>
-                        <p class="lead">Thank you so much for writing. This is my test website built with Laravel. Please read my popular post! </p>
-                        <p><a class="btn btn-primary btn-lg" href="#" role="button">Popular Post</a></p>
+                        <h1>Qui est Victor Hugo?</h1>
+                        <p class="lead">Ce blog vous raconte les plus grands et les plus connus écrivains français, Victor Hugo. Ici vous pouvez trouver différents articles sur lui. </p>
+
                     </div>
                 </div>
             </div> <!-- end of header .row -->
 
-            <div class="row">
-                <div class="col-md-8">
+            <div class="row" id="row-home">
+                <div class="col-md-12">
 
                     @foreach($posts as $post)
 
                     <div class="post">
                         <h3>{{ $post->title }}</h3>
                         <p>{{ substr($post->body, 0, 300) }}{{ strlen($post->body) > 300 ? "..." : "" }}</p>
-                        <a href="#" class="btn btn-primary">Read More</a><br>
+                        <a href="{{ url('posts/'.$post->id) }}" class="btn btn-primary">Read More</a><br>
                         <p>Posted In: {{ $post->created_at }}</p>
                     </div>
 
@@ -29,9 +29,8 @@
 
                     @endforeach
 
-                </div>
-                <div class="col-md-3 col-md-offset-1">
-                    <h2>Sidebar</h2>
+                    <br><br>
+
                 </div>
             </div>
 @endsection

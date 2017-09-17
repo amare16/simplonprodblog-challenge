@@ -28,7 +28,7 @@
                 <button type="submit" class="btn btn-default">Submit</button>
             </form> -->
             <ul class="nav navbar-nav navbar-right">
-                <a href="{{ route('register') }}" class="btn btn-default" >Register</a>
+                <a href="{{ route('register') }}" class="btn btn-default form-login-register" >Register</a>&nbsp&nbsp
 
                 @if(Auth::check())
 
@@ -43,7 +43,7 @@
 
                  @else
 
-                    <a href="{{ route('login') }}" class="btn btn-default">Login</a>
+                    <a href="{{ route('login') }}" class="btn btn-default form-login-register">Login</a>
 
                   @endif
 

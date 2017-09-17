@@ -23,6 +23,7 @@ Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('re
 Route::post('register', 'Auth\RegisterController@register');
 
 Route::get('/contact', 'PagesController@getContact');
+Route::post('/contact', 'PagesController@postContact');
 
 Route::get('/about', 'PagesController@getAbout');
 
