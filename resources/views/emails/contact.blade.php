@@ -1,4 +1,4 @@
-<h3>You have a New Contact Via the Contact Form</h3>
+<h3>You have a New Contact Via Contact Form</h3>
 
 <div>
     {{ $bodyMessage }}
