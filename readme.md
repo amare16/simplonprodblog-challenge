@@ -1,4 +1,4 @@
-Ce blog vous raconte les plus grands et les plus connus écrivains français, Victor Hugo. 
+Ce blog vous raconte les plus grands et les plus connus écrivains français, Victor Hugo. <br>
 Ici vous pouvez trouver différents articles sur lui.
 
 
