@@ -1,21 +1,27 @@
-/* home */
 
 body {
     background-color: #DFE2DB;
 }
 
+/* home page */
+
 .jumbotron {
     background-color: #b3b3ff;
 }
 
+/* index.blade.php */
 
 .btn-h1-spacing {
     margin-top: 18px;
 }
 
+/* edit.blade.php file */
+
 .form-spacing-top {
     margin-top: 30px;
 }
+
+/* login and register page - in _nave.blade.php*/
 
 .form-login-register {
     margin-top: 10px;
