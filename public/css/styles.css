@@ -3,6 +3,9 @@ body {
     background-color: #DFE2DB;
 }
 
+.container-fluid {
+    background-color: white;
+}
 /* home page */
 
 .jumbotron {
