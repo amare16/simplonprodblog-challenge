@@ -35,9 +35,12 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@postReset')->name('password.reset');
 
 
+// Contact Route
 
-Route::get('/contact', 'PagesController@getContact');
-Route::post('/contact', 'PagesController@postContact');
+Route::get('contact-us', 'ContactUSController@contactUS');
+Route::post('contact-us', ['as' => 'contactus.store', 'uses' => 'ContactUSController@contactUSPost']);
+
+
 
 Route::get('/about', 'PagesController@getAbout');
 

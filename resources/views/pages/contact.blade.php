@@ -8,25 +8,39 @@
         <div class="col-md-12">
             <h1>Contact Me</h1>
             <hr>
-            <form action="{{ url('contact') }}" method="post">
-                {{ csrf_field() }}
-                <div class="form-group">
-                    <label name="email">Email: </label>
-                    <input id="email" name="email" class="form-control">
-                </div>
 
-                <div class="form-group">
-                    <label name="subject">Subject: </label>
-                    <input id="subject" name="subject" class="form-control">
-                </div>
+           @if(Session::has('success'))
+               <div class="alert alert-success">
+                   {{ Session::get('success') }}
+               </div>
+            @endif
 
-                <div class="form-group">
-                    <label name="message">Message: </label>
-                    <textarea id="message" name="message" class="form-control">Type your message here ... </textarea>
-                </div>
+            {!! Form::open(['route' => 'contactus.store']) !!}
 
-                <input type="submit" value="Send Message" class="btn btn-success">
-            </form>
+            <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+
+                {!! Form::label('Name:') !!}
+                {!! Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => 'Enter Name']) !!}
+                <span class="text-danger">{{ $errors->first('name') }}</span>
+            </div>
+
+            <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+                {!! Form::label('Email:') !!}
+                {!! Form::text('email', old('email'), ['class'=>'form-control', 'placeholder'=>'Enter Email']) !!}
+                <span class="text-danger">{{ $errors->first('email') }}</span>
+            </div>
+
+            <div class="form-group {{ $errors->has('message') ? 'has-error' : '' }}">
+                {!! Form::label('Message:') !!}
+                {!! Form::textarea('message', old('message'), ['class'=>'form-control', 'placeholder'=>'Enter Message']) !!}
+                <span class="text-danger">{{ $errors->first('message') }}</span>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-success">Contact Me</button>
+            </div>
+
+            {!! Form::close() !!}
         </div>
     </div>
 
