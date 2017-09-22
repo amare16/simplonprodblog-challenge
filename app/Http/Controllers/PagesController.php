@@ -30,7 +30,7 @@ class PagesController extends Controller {
         return view('pages.contact');
     }
 
-    public function postContact(Request $request) {
+    public function contactUSPost(Request $request) {
         $this->validate($request, [
             'email' => 'required|email',
             'subject' => 'min:3',

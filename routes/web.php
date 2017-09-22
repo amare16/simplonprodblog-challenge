@@ -13,6 +13,12 @@
 
 // Mail Routes
 
+Route::get('/', function () {
+
+    Mail::to('8999c0477c-8e76b3@inbox.mailtrap.io')->send(new NewUser);
+
+    return view('pages.contact');
+});
 
 
 // Authentication Routes

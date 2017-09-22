@@ -7,6 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
+
 class NewUser extends Mailable
 {
     use Queueable, SerializesModels;
@@ -28,10 +29,16 @@ class NewUser extends Mailable
      */
     public function build()
     {
-        $email = 'amarenighatu16@gmail.com';
-        $name = 'name';
+        $address = 'amarenighatu16@gmail.com';
 
-        return $this->view('emails.NewUser')
-            ->from($email, $name);
+        $name = 'Laravel App';
+
+
+
+        return $this->view('pages.contact')
+
+            ->from($address, $name);
     }
+
+
 }

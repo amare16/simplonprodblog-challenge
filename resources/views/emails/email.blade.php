@@ -1,4 +1,4 @@
-<h3>You received a message from : {{ $name }}</h3
+<h3>You received a message from : {{ $name }}</h3>
 
     <p>
         Name: {{ $name }}
@@ -9,5 +9,5 @@
     </p>
 
     <p>
-        Message: {{ $user_message }}
+        Message: {{ $message }}
     </p>
