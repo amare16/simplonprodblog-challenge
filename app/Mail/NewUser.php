@@ -35,7 +35,7 @@ class NewUser extends Mailable
 
 
 
-        return $this->view('pages.contact')
+        return $this->view('emails.email')
 
             ->from($address, $name);
     }

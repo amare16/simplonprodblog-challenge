@@ -44,7 +44,7 @@ class ContactUSController extends Controller
             ),
 
             function ($message) {
-                    $message->from('amarenighatu16@gmail.com', 'To Amare')->subject('Test Email');
+                    $message->from('$email', 'To Amare')->subject('Test Email');
                     $message->to('amarenighatu16@gmail.com', 'Bilaw');
             });
 
