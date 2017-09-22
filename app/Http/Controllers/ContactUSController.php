@@ -16,7 +16,7 @@ class ContactUSController extends Controller
 
     public function contactUS() {
 
-        return view('contact-us');
+        return view('pages.contact');
     }
 
     /**

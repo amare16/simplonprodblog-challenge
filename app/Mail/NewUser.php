@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class MyMail extends Mailable
+class NewUser extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -28,7 +28,10 @@ class MyMail extends Mailable
      */
     public function build()
     {
-        return $this->from('amarenighatu16@gmail.com')
-            ->view('email.email');
+        $email = 'amarenighatu16@gmail.com';
+        $name = 'name';
+
+        return $this->view('emails.NewUser')
+            ->from($email, $name);
     }
 }
