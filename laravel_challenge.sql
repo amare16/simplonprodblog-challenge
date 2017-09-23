@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 18, 2017 at 12:10 PM
+-- Generation Time: Sep 23, 2017 at 11:07 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.5.9-1ubuntu4.22
 
@@ -23,6 +23,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contact_us`
+--
+
+CREATE TABLE IF NOT EXISTS `contact_us` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -31,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `migrations`
@@ -43,7 +59,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '2017_09_13_212001_create_posts_table', 1),
 (4, '2017_09_14_084539_add_title_to_posts', 2),
 (5, '2017_09_14_084627_add_body_to_posts', 2),
-(6, '2017_09_14_085342_create_posts_table', 3);
+(6, '2017_09_14_085342_create_posts_table', 3),
+(7, '2017_09_21_211236_create_contact_me_table', 4),
+(8, '2017_09_21_213510_create_contact_us_table', 5);
 
 -- --------------------------------------------------------
 
@@ -57,6 +75,13 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
   `created_at` timestamp NULL DEFAULT NULL,
   KEY `password_resets_email_index` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('yayne16@gmail.com', '$2y$10$boFfpzAZy83ojeI8NMkE0.ktQkc6gNwt7/QukyERpU6Bt2NC0dca6', '2017-09-20 08:47:16');
 
 -- --------------------------------------------------------
 
@@ -120,14 +145,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Amare NIGATU', 'amarenighatu16@gmail.com', '$2y$10$Le9gEWL1Lb93jdryZfabeed5dKxD0Rl3hnjEUupn6gaUzOlseovyG', 'S0kY07QAWdDOtlKUbITeZMV0TUNuYj6FxQdknOS4KI8KWVZ6eRHRyBsJ4cqD', '2017-09-16 17:20:59', '2017-09-16 17:20:59');
+(1, 'Amare NIGATU', 'amarenighatu16@gmail.com', '$2y$10$Le9gEWL1Lb93jdryZfabeed5dKxD0Rl3hnjEUupn6gaUzOlseovyG', 'PhGhjS8FeEKctZ9TOvawVxMErVuROn3puANQisOYsFqYzfd27thQnBqusZrK', '2017-09-16 17:20:59', '2017-09-16 17:20:59'),
+(2, 'Yayne', 'yayne16@gmail.com', '$2y$10$TeJtgFqOyqoKf4y0IDLHo.K1hDcjRdUcCH3PxUTFyuI2BOpdSiwvO', 'm1mXSLKTi1F8HL0WmezG275UUK1jl3D4DXMcc92Rw7VaaXF7kiRCQY4GQ1i1', '2017-09-20 07:18:24', '2017-09-20 07:18:24');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
