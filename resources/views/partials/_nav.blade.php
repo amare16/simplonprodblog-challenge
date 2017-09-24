@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Victor Hugo</a>
+            <a class="navbar-brand" href="http://media.topito.com/wp-content/uploads/2015/03/une_citation_victor_hugo.jpg" target="_blank">Victor Hugo</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,6 +18,7 @@
                 <li class="{{ Request::is('/') ? "active" : "" }}"><a href="/">Home</a></li>
                 <li class="{{ Request::is('about') ? "active" : "" }}"><a href="/about">About</a></li>
                 <li class="{{ Request::is('contact-us') ? "active" : "" }}"><a href="/contact-us">Contact</a></li>
+                <li class="{{ Request::is('documentaire') ? "active" : "" }}"><a href="https://www.youtube.com/watch?v=PEUvxH5jx-Y" target="_blank">Documentaire</a></li>
 
             </ul>
             <!-- search button
