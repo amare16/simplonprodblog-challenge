@@ -21,7 +21,7 @@
                     <div class="post">
                         <h3>{{ $post->title }}</h3>
                         <p>{{ substr($post->body, 0, 300) }}{{ strlen($post->body) > 300 ? "..." : "" }}</p>
-                        <a href="{{ url('posts/'.$post->id) }}" class="btn btn-primary">Read More</a><br>
+                        <a href="{{ url('blog/'.$post->slug) }}" class="btn btn-primary">Read More</a><br>
                         <p>Posted In: {{ $post->created_at }}</p>
                     </div>
 
